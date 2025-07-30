@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+struct Book
+{
+  string title;
+  string author;
+  int Id;
+  float price;
+};
+int main()
+{
+  int n;
+  cout<<"How Many Books Do You Want To Enter: ";
+  cin>>n;
+  cout<<endl;
+  
+  Book b[n];  // Array of Books
+  for(int i=0;i<n;i++)
+  {
+      cout<<"Enter Detail Of Book "<<i+1<<":\n ";
+      cout<<"ID: ";
+      cin>>b[i].Id;
+ cin.ignore();
+ cout<<"Title: ";
+ getline(cin,b[i].title);
+ cout<<"Author: ";
+ getline(cin,b[i].author);
+ cout<<"Price: ";
+ cin>>b[i].price;
+ cout<<endl;
+  }
+   cout<<"---------------------------------------"<<endl;
+   cout<<"========== Book == Records ============"<<endl;
+   cout<<"---------------------------------------"<<endl;
+   for(int i=0;i<n;i++)
+   {
+    cout << "\nBook " << i + 1 << ":\n";
+        cout << "ID     : " << b[i].Id << endl;
+        cout << "Title  : " << b[i].title << endl;
+        cout << "Author : " << b[i].author << endl;
+        cout << "Price  : $" << b[i].price << endl;   
+       
+   }
+      
+    return 0;
+}
